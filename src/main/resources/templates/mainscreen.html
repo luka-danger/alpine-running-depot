@@ -18,7 +18,7 @@
 <div class="container">
     <h1>Alpine Running</h1>
     <hr>
-    <h2>Parts</h2>
+    <h2>Brands</h2>
     <form th:action="@{/mainscreen}">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
         &nbsp;
@@ -33,6 +33,7 @@
         <thead class="thead-dark">
         <tr>
             <th>Name</th>
+            <th>Product Type</th>
             <th>Price</th>
             <th>Inventory</th>
             <th>Action</th>
