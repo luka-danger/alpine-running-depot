@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: "Oxygen", sans-serif;
+    background-color: rgb(210, 208, 208);
 }
 
 .container {
@@ -12,13 +13,6 @@ body {
     height: 100vh;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-}
-
 .left {
     background-image: url("../images/outdoor-run.jpg");
     background-size: cover;
@@ -26,12 +20,15 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.top {
-    height: 40vh;
-    display: flex;
-    align-items: flex-end;
+.left h1 {
+    font-size: 50px;
+}
+
+.sub-logo {
+    font-style: italic;
 }
 
 .translucent {
@@ -41,23 +38,33 @@ body {
     width: 100vw;
 }
 
+.top {
+    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+}
+
 .bottom {
     height: 60vh;
 }
 
 .right {
-    background-color: rgb(210, 208, 208);
     width: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px;
 }
 
-.header h1 {
-    font-size: 50px;
+.header {
+    height: 12vh;
+    background-color: rgba(124, 124, 124, 0.35);
 }
 
-.sub-header {
-    font-style: italic;
+.parts {
+    height: 44vh;
 }
+
+.products {
+    height: 44vh;
+}
+
