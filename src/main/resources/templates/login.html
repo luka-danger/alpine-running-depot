@@ -12,7 +12,7 @@
     <title>About Alpine Running</title>
 </head>
 <body>
-    <div class="container">
+    <div class="login-container">
         <div class="login-header">
             <div>
                 <a th:href="@{/homepage}" class="btn btn-primary btn-sm mb-3">Home</a>
@@ -21,7 +21,36 @@
                 <a th:href="@{/about}" class="btn btn-primary btn-sm mb-3">About</a>
             </div>
         </div>
-        <div class="login-content"></div>
+        <div class="login-content">
+            <div class="login-box">
+                <form>
+                    <h1>Alpine Running Depot</h1>
+                    <div class="input">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="remember-forget">
+                        <label><input type="checkbox"> Remember Me</label>
+                        <a>Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="button">Login</button>
+
+                    <div class="sign-up">
+                        <p>Don't have an account yet?
+                            <a>Sign Up</a>
+                        </p>
+                    </div>
+
+                    <div class="search">
+                        <a>Try Out A Guest Account!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
