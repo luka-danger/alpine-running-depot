@@ -9,33 +9,27 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <title>About Alpine Running</title>
+    <title>Alpine Running Home Page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-            <div class="top">
-                <div class="translucent">
-                    <h1 >Alpine Running Depot</h1>
-                    <h4 class="sub-logo">Your one-stop shop for trail running gear</h4>
-                </div>
+<div class="container">
+    <div class="left">
+        <div class="top">
+            <div class="translucent">
+                <h1 >Alpine Running Depot</h1>
+                <h4 class="sub-logo">Your one-stop shop for trail running gear</h4>
             </div>
-            <div class="bottom"></div>
         </div>
-        <div class="right">
-            <div class="header">
-                <div>
-                    <a th:href="@{/homepage}" class="btn btn-primary btn-sm mb-3">Home</a>
-                </div>
-                <div>
-                    <a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Inventory</a>
-                </div>
-                <div>
-                    <a th:href="@{/login}" class="btn btn-primary btn-sm mb-3">Login</a>
-                </div>
-            </div>
-            <div class ="about-content"></div>
-        </div>
+        <div class="bottom"></div>
     </div>
+    <div class="right">
+        <div class="header">
+            <div>
+                <a th:href="@{/login}" class="btn btn-primary btn-sm mb-3">Login</a>
+            </div>
+        </div>
+        <div class ="about-content"></div>
+    </div>
+</div>
 </body>
 </html>
