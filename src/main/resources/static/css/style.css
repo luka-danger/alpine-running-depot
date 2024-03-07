@@ -64,11 +64,40 @@ body {
     align-items: center;
 }
 
-.parts {
+.inventory-table,
+.add-item{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    width: 50vw;
+}
+
+th {
+    background-color: rgb(235,235,235);
+    font-family: "Oxygen:wght@300", sans-serif;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background-color: rgb(235,235,235);
+}
+
+tr:nth-child(odd) td {
+    background-color: rgb(250,250,250);
+}
+
+.parts,
+.products{
     height: 44vh;
 }
 
-.products {
-    height: 44vh;
-}
 
