@@ -98,6 +98,7 @@ tr:nth-child(odd) td {
 .parts,
 .products{
     height: 44vh;
+    padding: 30px;
 }
 
 
