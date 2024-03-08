@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Alpine Running Contact</title>
+</head>
+<body>
+<div class="container">
+    <div class="contact-left">
+        <div class="top">
+            <div class="translucent">
+                <h1 >Alpine Running Depot</h1>
+                <h4 class="sub-logo">Your one-stop shop for trail running gear</h4>
+            </div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+    <div class="right">
+        <div class="header">
+            <div>
+                <a th:href="@{/about}">About</a>
+            </div>
+            <div>
+                <a th:href="@{/login}">Login</a>
+            </div>
+        </div>
+        <div class ="contact-content">
+            <p>
+
+            </p>
+            <img class="about-photo" src="/images/trail-run.jpg" alt="a man running in a field">
+        </div>
+    </div>
+</div>
+</body>
+</html>
