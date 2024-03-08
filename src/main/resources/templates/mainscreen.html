@@ -41,11 +41,11 @@
         <div class="parts">
             <h2>Replacement Parts</h2>
             <form th:action="@{/mainscreen}">
-                Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
+                Filter: <input type="text" name="partkeyword" size="50" th:value="${partkeyword}" required />
                 &nbsp;
                 <input type="submit" value="Search" />
                 &nbsp;
-                <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
+                <input type="button" value="Clear" onclick="clearSearch()" />
             </form>
             <br>
             <!-- <br> -->
