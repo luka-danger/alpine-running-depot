@@ -88,6 +88,13 @@ table {
     letter-spacing: 1px;
     font-size: 1rem;
     width: 50vw;
+    overflow: scroll;
+}
+
+.inventory-table {
+    width: 100%; /* Adjust width as needed */
+    max-height: 176px; /* Maximum height */
+    overflow: auto; /* Initially set to auto */
 }
 
 th {
