@@ -136,7 +136,7 @@ a:link, a:visited {
 
 @media (max-width: 840px) {
     .about-content p,
-    .about-photo{
+    .about-photo {
         display: none;
     }
 }
@@ -249,6 +249,12 @@ a:link, a:visited {
 }
 
 /* CONTACT PAGE */
+@media (max-width: 800px) {
+    .contact-content p,
+    .contact-photo {
+        display: none;
+    }
+}
 
 .contact-left {
     background-image: url("../images/beach-run.jpg");
