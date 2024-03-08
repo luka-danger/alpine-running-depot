@@ -80,7 +80,7 @@ work, as this is not a real website. These changes affect the login.html file an
 </ul>
 </ul>
 
-Static/Templates: 
+Resources/Templates: 
 <ul>
 <li>Structural Changes to mainscreen.html:</li>
 <ul>
