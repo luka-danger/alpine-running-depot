@@ -75,9 +75,11 @@ body {
 }
 
 /* FIX ME */
-.inventory-table {
-    width: 100%;
-    overflow: scroll;
+
+@media (max-width: 600px) {
+    .inventory-table {
+        display: none;
+    }
 }
 
 table {
@@ -89,7 +91,7 @@ table {
 }
 
 th {
-    background-color: rgb(235,235,235);
+    background-color: rgb(210, 208, 208);
     font-family: "Oxygen:wght@300", sans-serif;
 }
 
@@ -98,7 +100,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: rgb(235,235,235);
+    background-color: rgb(210, 208, 208);
 }
 
 tr:nth-child(odd) td {
