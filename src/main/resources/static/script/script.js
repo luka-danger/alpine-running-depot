@@ -6,3 +6,7 @@ function updateTableOverflow() {
         tableContainer.style.overflowY = 'scroll';
     }
 }
+
+function displayAlert() {
+    alert("This button doesn't work because it isn't a real website. It's just for school.");
+}

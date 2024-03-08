@@ -9,6 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/script/script.js" defer></script>
     <title>About Alpine Running</title>
 </head>
 <body>
@@ -29,17 +30,18 @@
                         <input type="password" placeholder="Password" required>
                     </div>
 
-                    <div class="forget">
-                        <a>Forgot Password?</a>
+                    <div class="display-alert" id="forget">
+                        <a onclick="displayAlert()">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="button">Login</button>
 
-                    <div class="sign-up">
+                    <div>
                         <p>Don't have an account yet?
-                            <a>Sign Up</a>
+                            <a onclick="displayAlert()" class="display-alert" id="sign-up">Sign Up</a>
                         </p>
                     </div>
+
 
                     <div class="test-drive">
                         <p>Not convinced yet? <a th:href="@{/mainscreen}">Test Drive An Account</a></p>
