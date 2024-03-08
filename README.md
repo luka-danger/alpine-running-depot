@@ -46,7 +46,7 @@ Controllers:
 <li>Guest About Controller</li>
 <li>Login Controller</li>
 </ul>
-The above controllers were added and use @Controller Annotation and @RequestMapping to 
+The above controllers were added and use Controller Annotation and @RequestMapping to 
 provide active links to the html pages: about.html, contact.html, guestAbout.html, and login.html
 
 Static/CSS:
