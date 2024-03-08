@@ -25,6 +25,7 @@ body {
 
 .left h1 {
     font-size: 50px;
+    text-decoration: 4px solid overline;
 }
 
 .sub-logo {
@@ -133,6 +134,11 @@ a:link, a:visited {
 
 /* LOGIN PAGE */
 
+.login-box h1 {
+    font-size: 50px;
+    text-decoration: 4px solid overline;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -168,4 +174,37 @@ a:link, a:visited {
     padding: 30px 40px;
 }
 
+.input input {
+    width: 100%;
+    height: 100%;
+    background: rgba(210, 208, 208, 0.15);
+    border: 2px solid rgba(225, 225, 225, 0.35);
+    border-radius: 40px;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.forget {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.button,
+.test-button {
+    width: 25%;
+    height: 40px;
+    border-radius: 40px;
+    border-color: rgba(0, 0, 0, .45);
+    background:rgba(210, 208, 208, 0.95);
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.test-drive {
+    font-size: 22px;
+    margin-top: 5px;
+}
