@@ -15,14 +15,18 @@ body {
     height: 100vh;
 }
 
+.contact-left,
 .left {
-    background-image: url("../images/outdoor-run.jpg");
     background-size: cover;
     width: max(40vw, 350px);
     height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.left {
+    background-image: url("../images/outdoor-run.jpg");
 }
 
 .left h1 {
@@ -137,7 +141,8 @@ a:link, a:visited {
     }
 }
 
-.about-content {
+.about-content,
+.contact-content {
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -243,3 +248,13 @@ a:link, a:visited {
     margin-top: 30px;
 }
 
+/* CONTACT PAGE */
+
+.contact-left {
+    background-image: url("../images/beach-run.jpg");
+}
+
+.contact-photo {
+    height: max(450px);
+    margin-top: 15px;
+}
