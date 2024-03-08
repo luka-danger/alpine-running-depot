@@ -148,8 +148,10 @@ contact.html, about.html, and guest.html pages.</strong></li>
 section.
 
 **D: Add an About Page:** All details of about pages can be found in the above 'Code Changes' section.
-The About page can also be accessed [here](src/main/resources/templates/guestAbout.html)
+The About page can also be accessed [here](http://localhost:8080/guestAbout). Code for the About page
+can be accessed [here](src/main/resources/templates/guestAbout.html).
 
+**E:**
 
 # Images
 The image used in contact.html on Line 45 is my own.
