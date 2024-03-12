@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.ProductRepository;
 import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
 import com.example.demo.service.ProductService;
@@ -111,6 +112,25 @@ public class AddProductController {
         //send over to our form
         return "productForm";
     }
+
+    // Part E
+    @GetMapping("/BuyProductNow")
+    public String buyProductNow(@RequestParam("productID") int theId, Model theModel) {
+        ProductService productService = context.getBean(ProductServiceImpl.class);
+        Product product = productService.findById(theId);
+
+        if (product.getInv() > 0) {
+            product.setInv(product.getInv() - 1);
+            productService.save(product);
+
+            theModel.addAttribute("message", "Purchase successful!");
+        } else {
+            theModel.addAttribute("message", "Product out of stock. Purchase failed.");
+        }
+
+        return "purchaseConfirmation";
+    }
+
 
     @GetMapping("/deleteproduct")
     public String deleteProduct(@RequestParam("productID") int theId, Model theModel) {
