@@ -39,6 +39,18 @@ Templates:
 </ul>
 
 # Code Changes:
+Bootstrap:
+<ul>
+<li>Comment out Outsourced Part Domain and Repository</li>
+<li>Add Parts Domain and Parts Repository</li>
+<li>Create new Parts Objects</li>
+<li>Write an if statement that adds the new Parts objects to the Parts 
+repository if the Parts repository is empty</li>
+<li>Create new Products Objects</li>
+<li>Write an if statement that adds the new Products objects to the Parts 
+repository if the Products repository is empty</li>
+</ul>
+
 Controllers:
 <ul>
 <li>About Controller</li>
@@ -48,6 +60,12 @@ Controllers:
 </ul>
 The above controllers were added and use Controller Annotation and @RequestMapping to 
 provide active links to the html pages: about.html, contact.html, guestAbout.html, and login.html
+
+Domain:
+<ul>
+<li>Comment out abstract class in Part Object Constructor</li>
+<li>Make Part Object Constructor a public class that can be instantiated</li>
+</ul>
 
 Static/CSS:
 <ul>
@@ -144,14 +162,18 @@ contact.html, about.html, and guest.html pages.</strong></li>
 </ul>
 
 # Code Description (Rubric Requirements)
-**C: Customize HTML user interface:** All details of changes can be found in the above 'Code Changes'
+**(C) Customize HTML user interface:** All details of changes can be found in the above 'Code Changes'
 section.
 
-**D: Add an About Page:** All details of about pages can be found in the above 'Code Changes' section.
+**(D) Add an About Page:** All details of about pages can be found in the above 'Code Changes' section.
 The About page can also be accessed [here](http://localhost:8080/guestAbout). Code for the About page
 can be accessed [here](src/main/resources/templates/guestAbout.html).
 
-**E:**
+**(E) Add A Sample Parts and Products Inventory:** This section can be found in the BootStrapData.java 
+file on Lines 43-71. An if statement is used to display the sample inventories when the parts and products
+lists are empty.
+
+**(F)**
 
 # Images
 The image used in contact.html on Line 45 is my own.
