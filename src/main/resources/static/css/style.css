@@ -256,7 +256,8 @@ a:link, a:visited {
 /* PRODUCT FORM / PARTS FORM */
 
 .product-form,
-.parts-form {
+.parts-form,
+.purchase-confirmation {
     margin-left: 25px;
 }
 
