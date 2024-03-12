@@ -240,7 +240,7 @@ a:link, a:visited {
 }
 
 /* CONTACT PAGE */
-@media (max-width: 800px) {
+@media (max-width: 825px) {
     .contact-content p,
     .contact-photo {
         display: none;
@@ -252,7 +252,7 @@ a:link, a:visited {
 }
 
 .contact-photo {
-    height: max(350px);
+    height: max(400px);
     margin-top: 15px;
 }
 
@@ -260,15 +260,15 @@ a:link, a:visited {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 35vh;
+    justify-content: flex-end;
+    height: 30vh;
 }
 
 .contact-image {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    height: 65vh
+    align-items: baseline;
+    height: 70vh
 }
 
 .contact-content,
