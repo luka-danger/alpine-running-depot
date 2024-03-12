@@ -74,8 +74,11 @@ body {
 
 /* INVENTORY / MAIN SCREEN */
 
-@media (max-width: 600px) {
-    .inventory-table {
+@media (max-width: 700px) {
+    .inventory-table,
+    .parts,
+    .products,
+    .header {
         display: none;
     }
 }
@@ -135,7 +138,7 @@ a:link, a:visited {
 
 /* ABOUT PAGE */
 
-@media (max-width: 840px) {
+@media (max-width: 926px) {
     .about-content p,
     .about-photo,
     #contact {
@@ -144,7 +147,29 @@ a:link, a:visited {
 }
 
 .about-photo {
-    width: max(400px);
+    width: max(450px);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    font-size: 18px;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 60vh
+}
+
+.about-content,
+.about-image {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* LOGIN PAGE */
@@ -262,6 +287,7 @@ a:link, a:visited {
     align-items: center;
     justify-content: flex-end;
     height: 30vh;
+    font-size: 16px;
 }
 
 .contact-image {
