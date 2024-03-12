@@ -56,11 +56,14 @@ public class BootStrapData implements CommandLineRunner {
 
         // Sample Product Inventory
 
-        Product hokas = new Product("Hoka Speedgoat 5", 149.99, 4);
+        Product hokas = new Product("Hoka Speedgoat 5", 149.99, 5);
         Product wildhorse = new Product("Nike Wildhorse 8", 97.99, 10);
         Product ultimateVest = new Product("Ultimate Direction Hydration Vest", 109.99, 5);
         Product headLamp = new Product("Petzl Headlamp", 59.99, 6);
         Product waterFilter = new Product("BeFree Filtered Water Bottle", 39.99, 8);
+
+        // Uncomment the below code to reset sample inventory:
+        // productRepository.deleteAll();
 
         if (productRepository.count() == 0) {
             productRepository.save(hokas);
@@ -69,6 +72,7 @@ public class BootStrapData implements CommandLineRunner {
             productRepository.save(headLamp);
             productRepository.save(waterFilter);
         }
+
         // Unused Demo Code
         /*
         OutsourcedPart o= new OutsourcedPart();
