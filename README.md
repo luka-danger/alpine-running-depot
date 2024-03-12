@@ -36,6 +36,7 @@ Templates:
 <li>Contact.html</li>
 <li>guestAbout.html</li>
 <li>Login.html</li>
+<li>purchaseConfirmation.html</li>
 </ul>
 
 # Code Changes:
@@ -49,9 +50,10 @@ repository if the Parts repository is empty</li>
 <li>Create new Products Objects</li>
 <li>Write an if statement that adds the new Products objects to the Parts 
 repository if the Products repository is empty</li>
+<li>Line 66 (commented out) allows the user to reset the sample inventory</li>
 </ul>
 
-Controllers:
+Added Controllers:
 <ul>
 <li>About Controller</li>
 <li>Contact Controller</li>
@@ -60,6 +62,14 @@ Controllers:
 </ul>
 The above controllers were added and use Controller Annotation and @RequestMapping to 
 provide active links to the html pages: about.html, contact.html, guestAbout.html, and login.html
+
+Controllers:
+<ul>
+<li>AddProductController: Added BuyProductNow Controller to decrement 
+purchased product inventory by 1 and map to the newly created 
+purchaseConfirmation.html file. Further details found in Code Description 
+section of README</li>
+</ul>
 
 Domain:
 <ul>
@@ -96,6 +106,10 @@ and "Sign Up" are clicked on the login page. This alert informs the user that th
 work, as this is not a real website. These changes affect the login.html file and affect the 
 "Forgot Password" link on Line 37 and the "Sign Up" link on Line 44.</li>
 </ul>
+<li>noInventory(): This function changes the font color of the name and inventory number
+of any item on the product table where the inventory number is equal to zero. The font color
+is changed to red to indicate that the item is out of stock. This function can be found on
+Lines 14 - 24.</li>
 </ul>
 
 Resources/Templates: 
@@ -107,23 +121,24 @@ the Spring Boot Application. It can also be reached by clicking the Test Drive b
 Line 50 of login.html</strong></li>
 <li>Link Stylesheet (style.css) on Line 11</li>
 <li>Link JavaScript File (script.js) on Line 12</li>
-<li>Add inline script to run updateTableOverflow() function on window loading on Line 13</li>
-<li>Change title to Alpine Running on Line 17</li>
-<li>Wrap body in container div on Line 21</li>
-<li>Separate into left and right containers on Lines 22 and 32</li>
+<li>Change title to Alpine Running on Line 13</li>
+<li>Wrap body in container div on Line 17</li>
+<li>Separate into left and right containers on Lines 18 and 28</li>
 <li>Add a top and bottom container to left container for h1 and sub-header on 
-Lines 23-29</li>
-<li>Add header with href links to About, Contact Us, and Login pages on Lines 33 - 42</li>
-<li>Wrap Replacement Parts section in a div called parts on Line 44</li>
-<li>Wrap Add Item Links in a div Line 55 </li>
-<li>Change "Add In-House Item" to "Add Replacement Item" on Line 56</li>
-<li>Comment out the outsourced item link on Line 57</li>
-<li>Wrap Replacement Item Inventory Table in a div called inventory-table on Line 59</li>
+Lines 19-25</li>
+<li>Add header with href links to About, Contact Us, and Login pages on Lines 29 - 39</li>
+<li>Wrap Replacement Parts section in a div called parts on Line 40</li>
+<li>Wrap Add Item Links in a div Line 51 </li>
+<li>Change "Add In-House Item" to "Add Replacement Item" on Line 52</li>
+<li>Comment out the outsourced item link on Line 53</li>
+<li>Wrap Replacement Item Inventory Table in a div called inventory-table on Line 55</li>
 <li>This tables uses the custom JavaScript function updateTableOverflow()</li>
-<li>Wrap Products section in a div called parts on Line 83</li>
-<li>Wrap Add Product in a div Line 99</li>
-<li>Wrap Product Inventory Table in a div called inventory-table on Line 102</li>
+<li>Wrap Products section in a div called products on Line 80</li>
+<li>Wrap Add Product in a div Line 96</li>
+<li>Wrap Product Inventory Table in a div called inventory-table on Line 99</li>
 <li>This tables uses the custom JavaScript function updateTableOverflow()</li>
+<li>This table uses the custom JavaScript function noInventory()</li>
+<li>Create "Buy Now" button on Line 116</li>
 </ul>
 </ul>
 
@@ -173,7 +188,19 @@ can be accessed [here](src/main/resources/templates/guestAbout.html).
 file on Lines 43-71. An if statement is used to display the sample inventories when the parts and products
 lists are empty.
 
-**(F)**
+**(F) Add A Buy Now Button To Product List:**
+<ul>
+<li>The Buy Now Button can be found on mainscreen.html on Line 116</li>
+<li>The buy now button maps to purchaseConfirmation.html</li>
+<li>The Buy Now button uses the BuyProductNow Controller to decrement 
+items by 1 each time they are purchased. (Lines 117 - 132 on 
+/controllers/AddProductController.java)</li>
+<li>A purchase successful or purchase failed message is displayed 
+on purchaseConfirmation.html (Lines 126 and 128 on 
+/controllers/AddProductController.java)</li>
+</ul>
+
+**(G)**
 
 # Images
 The image used in contact.html on Line 45 is my own.
