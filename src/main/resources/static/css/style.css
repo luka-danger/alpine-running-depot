@@ -62,6 +62,7 @@ body {
     justify-content: center;
 }
 
+.contact-about-header,
 .header {
     height: 10vh;
     background-color: rgb(169, 168, 168);
@@ -136,24 +137,14 @@ a:link, a:visited {
 
 @media (max-width: 840px) {
     .about-content p,
-    .about-photo {
+    .about-photo,
+    #contact {
         display: none;
     }
 }
 
-.about-content,
-.contact-content {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 35px;
-    font-size: 20px;
-}
-
 .about-photo {
-    width: max(500px);
+    width: max(400px);
 }
 
 /* LOGIN PAGE */
@@ -261,6 +252,27 @@ a:link, a:visited {
 }
 
 .contact-photo {
-    height: max(450px);
+    height: max(350px);
     margin-top: 15px;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35vh;
+}
+
+.contact-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 65vh
+}
+
+.contact-content,
+.contact-image {
+    padding-left: 30px;
+    padding-right: 30px;
 }
