@@ -45,10 +45,12 @@ public class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv) {
+    public Part(String name, double price, int inv, Integer minInventory, Integer maxInventory) {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInventory = minInventory;
+        this.maxInventory = maxInventory;
     }
 
     public Part(long id, String name, double price, int inv, Integer minInventory, Integer maxInventory) {

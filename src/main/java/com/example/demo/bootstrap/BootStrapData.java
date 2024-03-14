@@ -40,11 +40,11 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println(partRepository.findAll());
 
         // Sample Product Inventory
-        Part shoelace = new Part("Shoelace Replacement", 4.99, 20);
-        Part vestStrap = new Part("Vest Strap Replacement", 8.99, 10);
-        Part headBand = new Part("Head Lamp Band Replacement", 14.99, 6);
-        Part lampBulb = new Part("Head Lamp Bulb Replacement", 16.99, 9);
-        Part filter = new Part("Replacement Water Filter", 15.99, 15);
+        Part shoelace = new Part("Shoelace Replacement", 4.99, 20, 0 ,20);
+        Part vestStrap = new Part("Vest Strap Replacement", 8.99, 10, 0, 20);
+        Part headBand = new Part("Head Lamp Band Replacement", 14.99, 6, 0, 20);
+        Part lampBulb = new Part("Head Lamp Bulb Replacement", 16.99, 9, 0 , 20);
+        Part filter = new Part("Replacement Water Filter", 15.99, 15, 0, 20);
 
         if (partRepository.count() == 0) {
             partRepository.save(shoelace);

@@ -231,7 +231,32 @@ on purchaseConfirmation.html (Lines 126 and 128 on
 </ul>
 
 **(G) Modify Parts to track max and min inventory**
-<ul></ul>
+<ul>
+<li>Add additional fields to the part entity for maximum and minimum inventory:</li>
+<ul>
+<li>Add max and min inventory fields to Parts (/domain/Part Lines 34-38)</li>
+<li>Add fields to overloaded Parts Constructor (/domain/Part Lines 48-60) </li>
+</ul>
+<li>Modify the sample inventory to include the maximum and minimum fields:</li>
+<ul>
+<li>Changes found at /bootstrap/BootStrapData.java Lines: 43-47</li>
+</ul>
+<li>Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for 
+the inventory so the user can set the maximum and minimum values: </li>
+<ul>
+<li>Changes found at/templates/InHousePartForm 
+and /templates/OutsourcedPartForm (Lines 26-30)</li>
+</ul>
+<li>Rename the file the persistent storage is saved to:</li>
+<ul>
+<li>Changes found in resources/application.properties (Line 6)</li>
+</ul>
+<li>Modify the code to enforce that the inventory is between or at 
+the minimum and maximum value:</li>
+<ul>
+<li>Changes found in /domain/Part (Lines 97-102)</li>
+</ul>
+</ul>
 
 # Images
 The image used in contact.html on Line 45 is my own.
