@@ -258,6 +258,40 @@ the minimum and maximum value:</li>
 </ul>
 </ul>
 
+**(H) Add validation for min / max fields**
+<ul>
+<li>Display error message for low inventory when adding/updating parts if inventory less
+than minimum number of parts</li>
+<ul>
+<li></li>
+</ul>
+<li>Display error message for low inventory when adding/updating products lowers the part
+inventory below the minimum</li>
+<ul>
+<li></li>
+</ul>
+<li>Display error message when adding/updating parts if the inventory is greater than 
+maximum</li>
+<ul>
+<li></li>
+</ul>
+</ul>
+
+**(I) Add Two Units Tests for Min/Max Fields to the PartTest class in test package**
+<ul>
+<li>Test 1: </li>
+</ul>
+<ul>
+<li>Test 2:</li>
+</ul>
+
+**(J) Removed class files for unused validators:**
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
 # Images
 The image used in contact.html on Line 45 is my own.
 <br>
