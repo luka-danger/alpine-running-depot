@@ -59,6 +59,8 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Inventory</th>
+                        <th>Min</th>
+                        <th>Max</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -67,6 +69,8 @@
                         <td th:text="${tempPart.name}">1</td>
                         <td th:text="${tempPart.price}">1</td>
                         <td th:text="${tempPart.inv}">1</td>
+                        <td th:text="${tempPart.minInventory}">1</td>
+                        <td th:text="${tempPart.maxInventory}">1</td>
                         <td>
                             <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}">Update</a>
                             <a th:href="@{/deletepart(partID=${tempPart.id})}"

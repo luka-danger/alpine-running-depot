@@ -4,6 +4,7 @@ import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,6 +31,12 @@ public class Part implements Serializable {
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
+    @Min(value = 0, message = "Minimum inventory value cannot be below zero")
+    private Integer minInventory;
+
+    @Max(value = 25, message= "Inventory can hold a maximum of 20 items")
+    private Integer maxInventory;
+
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
             inverseJoinColumns=@JoinColumn(name="product_id"))
@@ -44,11 +51,13 @@ public class Part implements Serializable {
         this.inv = inv;
     }
 
-    public Part(long id, String name, double price, int inv) {
+    public Part(long id, String name, double price, int inv, Integer minInventory, Integer maxInventory) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInventory = minInventory != null ? minInventory : 0;
+        this.maxInventory = maxInventory != null ? maxInventory : 0;
     }
 
     public long getId() {
@@ -81,6 +90,14 @@ public class Part implements Serializable {
 
     public void setInv(int inv) {
         this.inv = inv;
+    }
+
+    public int getMinInventory() {
+        return minInventory != null ? minInventory : 0;
+    }
+
+    public int getMaxInventory() {
+        return maxInventory != null ? maxInventory : 20;
     }
 
     public Set<Product> getProducts() {

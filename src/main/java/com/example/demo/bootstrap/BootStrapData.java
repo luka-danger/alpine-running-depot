@@ -63,7 +63,7 @@ public class BootStrapData implements CommandLineRunner {
         Product waterFilter = new Product("BeFree Filtered Water Bottle", 39.99, 8);
 
         // Uncomment the below code to reset sample inventory:
-        // productRepository.deleteAll();
+        productRepository.deleteAll();
 
         if (productRepository.count() == 0) {
             productRepository.save(hokas);

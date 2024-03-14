@@ -75,6 +75,13 @@ Domain:
 <ul>
 <li>Comment out abstract class in Part Object Constructor</li>
 <li>Make Part Object Constructor a public class that can be instantiated</li>
+<li>Add minInventory Variable</li>
+<li>Add maxInventory Variable</li>
+<li>Add min/max variables to overloaded Constructor</li>
+<li>Create minInventory getter</li>
+<li>Write code to enforce minimum value</li>
+<li>Create maxInventory getter</li>
+<li>Write code to enforce maximum value</li>
 </ul>
 
 Static/CSS:
@@ -112,6 +119,16 @@ is changed to red to indicate that the item is out of stock. This function can b
 Lines 14 - 24.</li>
 </ul>
 
+H2 Database:
+<ul>
+<li>Use ALTER TABLE Command to add Min_Inventory and Max_Inventory to parts database schema</li>
+</ul>
+
+Resources/application.properties: 
+<ul>
+<li>Renamed the database file: jdbc:h2:file:~/renamedH2Db/li>
+</ul>
+
 Resources/Templates: 
 <ul>
 <li>Structural Changes to mainscreen.html:</li>
@@ -127,6 +144,8 @@ Line 50 of login.html</strong></li>
 <li>Add a top and bottom container to left container for h1 and sub-header on 
 Lines 19-25</li>
 <li>Add header with href links to About, Contact Us, and Login pages on Lines 29 - 39</li>
+<li>Add Min and Max to Parts Table Head</li>
+<li>Add Min and Max Values to Parts Table</li>
 <li>Wrap Replacement Parts section in a div called parts on Line 40</li>
 <li>Wrap Add Item Links in a div Line 51 </li>
 <li>Change "Add In-House Item" to "Add Replacement Item" on Line 52</li>
@@ -140,7 +159,17 @@ Lines 19-25</li>
 <li>This table uses the custom JavaScript function noInventory()</li>
 <li>Create "Buy Now" button on Line 116</li>
 </ul>
+<li>Changes to InHousePartForm.html:</li>
+<ul>
+<li>Add min and max values for in house part form</li>
 </ul>
+<li>Changes to OutsourcedPartForm.html:</li>
+<ul>
+<li>Add min and max values for outsourced part form</li>
+</ul>
+</ul>
+
+
 
 Added Templates:
 All added templates can be accessed by use of the following created controllers: AboutController, 
@@ -176,6 +205,7 @@ and contact.html pages.</li>
 contact.html, about.html, and guest.html pages.</strong></li>
 </ul>
 
+
 # Code Description (Rubric Requirements)
 **(C) Customize HTML user interface:** All details of changes can be found in the above 'Code Changes'
 section.
@@ -200,7 +230,8 @@ on purchaseConfirmation.html (Lines 126 and 128 on
 /controllers/AddProductController.java)</li>
 </ul>
 
-**(G)**
+**(G) Modify Parts to track max and min inventory**
+<ul></ul>
 
 # Images
 The image used in contact.html on Line 45 is my own.
