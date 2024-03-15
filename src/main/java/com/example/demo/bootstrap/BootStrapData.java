@@ -1,7 +1,7 @@
 package com.example.demo.bootstrap;
 
-// import com.example.demo.domain.OutsourcedPart;
-// import com.example.demo.repositories.OutsourcedPartRepository;
+import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
 import com.example.demo.domain.Part;
@@ -23,12 +23,12 @@ public class BootStrapData implements CommandLineRunner {
     private final PartRepository partRepository;
     private final ProductRepository productRepository;
 
-    // private final OutsourcedPartRepository outsourcedPartRepository;
+    private final OutsourcedPartRepository outsourcedPartRepository;
 
-    public BootStrapData(PartRepository partRepository, ProductRepository productRepository) {
+    public BootStrapData(PartRepository partRepository, ProductRepository productRepository, OutsourcedPartRepository outsourcedPartRepository) {
         this.partRepository = partRepository;
         this.productRepository = productRepository;
-        // this.outsourcedPartRepository=outsourcedPartRepository;
+        this.outsourcedPartRepository=outsourcedPartRepository;
     }
 
     @Override
@@ -39,22 +39,23 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Number of Parts: "+partRepository.count());
         System.out.println(partRepository.findAll());
 
-        // Sample Product Inventory
-        Part shoelace = new Part("Shoelace Replacement", 4.99, 92, 0 ,100);
-        Part vestStrap = new Part("Vest Strap Replacement", 8.99, 28, 0, 100);
-        Part headBand = new Part("Head Lamp Band Replacement", 14.99, 45, 0, 100);
-        Part lampBulb = new Part("Head Lamp Bulb Replacement", 16.99, 40, 0 , 100);
-        Part filter = new Part("Replacement Water Filter", 15.99, 72, 0, 100);
+        // Sample Part Inventory
+
+        OutsourcedPart shoelace = new OutsourcedPart("Shoelace Replacement", 12.99, 84, 0, 100);
+        OutsourcedPart vestStrap = new OutsourcedPart("Vest Strap Replacement", 8.99, 28, 0, 100);
+        OutsourcedPart headBand = new OutsourcedPart("Head Lamp Band Replacement", 14.99, 45, 0, 100);
+        OutsourcedPart lampBulb = new OutsourcedPart("Head Lamp Bulb Replacement", 16.99, 40, 0 , 100);
+        OutsourcedPart filter = new OutsourcedPart("Replacement Water Filter", 15.99, 72, 0, 100);
 
         // Uncomment the below code to reset sample inventory:
         // partRepository.deleteAll();
 
-        if (partRepository.count() == 0) {
-            partRepository.save(shoelace);
-            partRepository.save(vestStrap);
-            partRepository.save(headBand);
-            partRepository.save(lampBulb);
-            partRepository.save(filter);
+        if(partRepository.count() == 0) {
+            outsourcedPartRepository.save(shoelace);
+            outsourcedPartRepository.save(vestStrap);
+            outsourcedPartRepository.save(headBand);
+            outsourcedPartRepository.save(lampBulb);
+            outsourcedPartRepository.save(filter);
         }
 
         // Sample Product Inventory
@@ -107,4 +108,6 @@ public class BootStrapData implements CommandLineRunner {
         */
     }
 }
+
+
 

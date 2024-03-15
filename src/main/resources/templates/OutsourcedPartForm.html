@@ -8,33 +8,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Outsourced Part Detail</h1>
+<div class="parts-form">
+    <h1>Replacement Part Detail</h1>
+    <form action="#" th:action="@{/showFormAddOutPart}" th:object="${outsourcedpart}" method="POST">
+        <!-- Add hidden form field to handle update -->
+        <p><input type="hidden" th:field="*{id}"/></p>
 
-<form action="#" th:action="@{/showFormAddOutPart}" th:object="${outsourcedpart}" method="POST"}>
+        <p><input type="text" th:field="*{name}" placeholder="Name"/></p>
 
-<!-- Add hidden form field to handle update -->
-    <p><input type="hidden" th:field="*{id}"/></p>
+        <p><input type="text" th:field="*{price}" placeholder="Price"/></p>
+        <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
 
-<p><input type="text" th:field="*{name}" placeholder="Name"/></p>
+        <p><input type="text" th:field="*{inv}" placeholder="Inventory"/></p>
+        <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
-<p><input type="text" th:field="*{price}" placeholder= "Price"/></p>
-    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+        <!-- For minInventory -->
+        <p><input type="text" th:field="*{minInventory}" placeholder="Min"/></p>
+        <p th:if="${#fields.hasErrors('minInventory')}" th:errors="*{minInventory}">Minimum Inventory Error</p>
 
-<p><input type="text" th:field="*{inv}" placeholder="Inventory"/></p>
-    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+        <!-- For maxInventory -->
+        <p><input type="text" th:field="*{maxInventory}" placeholder="Max"/></p>
+        <p th:if="${#fields.hasErrors('maxInventory')}" th:errors="*{maxInventory}">Maximum Inventory Error</p>
+
+        <p><input type="submit" value="Submit" /></p>
+    </form>
 
 
-<p><input type="text" path="minInventory" th:field="*{minInventory}" placeholder="Min"/></p>
-    <p th:if="${#fields.hasErrors('minInventory')}" th:errors="*{minInventory}">Minimum Inventory Error</p>
-
-<p><input type="text" path="maxInventory" th:field="*{maxInventory}" placeholder="Max"/></p>
-    <p th:if="${#fields.hasErrors('maxInventory')}" th:errors="*{maxInventory}">Maximum Inventory Error</p>
-
-    <!-- <p><input type="text" th:field="*{companyName}" placeholder="Company Name"/></p> -->
-
-<p><input type="submit" value="Submit" /></p>
-</form>
-<a href="http://localhost:8080/">Link
-    to Main Screen</a>
+    <div>
+        <a class="back-to-main" href="http://localhost:8080/">Back to main inventory</a>
+    </div>
+</div>
 </body>
 </html>

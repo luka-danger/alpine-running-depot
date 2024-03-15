@@ -20,7 +20,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
-// public abstract class Part implements Serializable {
+// public class Part implements Serializable {
 public class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,7 +59,7 @@ public class Part implements Serializable {
         this.price = price;
         this.inv = inv;
         this.minInventory = minInventory != null ? minInventory : 0;
-        this.maxInventory = maxInventory != null ? maxInventory : 0;
+        this.maxInventory = maxInventory != null ? maxInventory : 100;
     }
 
     public long getId() {
