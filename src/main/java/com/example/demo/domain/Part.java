@@ -34,7 +34,7 @@ public class Part implements Serializable {
     @Min(value = 0, message = "Minimum inventory value cannot be below zero")
     private Integer minInventory;
 
-    @Max(value = 20, message= "Inventory can hold a maximum of 20 items")
+    @Max(value = 100, message= "Inventory can hold a maximum of 100 items")
     private Integer maxInventory;
 
     @ManyToMany
@@ -111,7 +111,7 @@ public class Part implements Serializable {
     }
 
     public int getMaxInventory() {
-        return maxInventory != null ? maxInventory : 20;
+        return maxInventory != null ? maxInventory : 100;
     }
 
     public Set<Product> getProducts() {

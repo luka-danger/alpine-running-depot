@@ -40,11 +40,14 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println(partRepository.findAll());
 
         // Sample Product Inventory
-        Part shoelace = new Part("Shoelace Replacement", 4.99, 20, 0 ,20);
-        Part vestStrap = new Part("Vest Strap Replacement", 8.99, 10, 0, 20);
-        Part headBand = new Part("Head Lamp Band Replacement", 14.99, 6, 0, 20);
-        Part lampBulb = new Part("Head Lamp Bulb Replacement", 16.99, 9, 0 , 20);
-        Part filter = new Part("Replacement Water Filter", 15.99, 15, 0, 20);
+        Part shoelace = new Part("Shoelace Replacement", 4.99, 92, 0 ,100);
+        Part vestStrap = new Part("Vest Strap Replacement", 8.99, 28, 0, 100);
+        Part headBand = new Part("Head Lamp Band Replacement", 14.99, 45, 0, 100);
+        Part lampBulb = new Part("Head Lamp Bulb Replacement", 16.99, 40, 0 , 100);
+        Part filter = new Part("Replacement Water Filter", 15.99, 72, 0, 100);
+
+        // Uncomment the below code to reset sample inventory:
+        // partRepository.deleteAll();
 
         if (partRepository.count() == 0) {
             partRepository.save(shoelace);
@@ -56,11 +59,11 @@ public class BootStrapData implements CommandLineRunner {
 
         // Sample Product Inventory
 
-        Product hokas = new Product("Hoka Speedgoat 5", 149.99, 5);
-        Product wildhorse = new Product("Nike Wildhorse 8", 97.99, 10);
-        Product ultimateVest = new Product("Ultimate Direction Hydration Vest", 109.99, 5);
-        Product headLamp = new Product("Petzl Headlamp", 59.99, 6);
-        Product waterFilter = new Product("BeFree Filtered Water Bottle", 39.99, 8);
+        Product hokas = new Product("Hoka Speedgoat 5", 149.99, 25);
+        Product wildhorse = new Product("Nike Wildhorse 8", 97.99, 30);
+        Product ultimateVest = new Product("Ultimate Direction Hydration Vest", 109.99, 45);
+        Product headLamp = new Product("Petzl Headlamp", 59.99, 67);
+        Product waterFilter = new Product("BeFree Filtered Water Bottle", 39.99, 38);
 
         // Uncomment the below code to reset sample inventory:
         // productRepository.deleteAll();
