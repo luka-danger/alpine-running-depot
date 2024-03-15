@@ -39,6 +39,11 @@ Templates:
 <li>purchaseConfirmation.html</li>
 </ul>
 
+# Removed Files:
+<ul>
+<li>DeletePartValidator Class</li>
+</ul>
+
 # Code Changes:
 Bootstrap:
 <ul>
@@ -295,12 +300,12 @@ in AddProduct Controller (Lines 198-209)</li>
 
 **(J) Removed class files for unused validators:**
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li>Remove DeletePartValidator Class</li>
 </ul>
 
 # Images
 The image used in contact.html on Line 45 is my own.
 <br>
 All other images are free, stock photos downloaded from Unsplash.com
+
+# Screenshots
