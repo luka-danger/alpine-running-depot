@@ -49,7 +49,7 @@
             <br>
             <!-- <br> -->
             <div class="add-item">
-                <a th:href="@{/showFormAddInPart}">Add <!--In-house--> Replacement Item</a>
+                <a th:href="@{/showAddPartForm}">Add <!--In-house--> Replacement Item</a>
                 <!-- <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-sm mb-3">Order Outsourced Item</a> -->
             </div>
             <div class="inventory-table">
@@ -72,7 +72,7 @@
                         <td th:text="${tempPart.minInventory}">1</td>
                         <td th:text="${tempPart.maxInventory}">1</td>
                         <td>
-                            <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}">Update</a>
+                            <a th:href="@{/showAddPartForm(partID=${tempPart.id})}">Update</a>
                             <a th:href="@{/deletepart(partID=${tempPart.id})}"
                                onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
                         </td>
