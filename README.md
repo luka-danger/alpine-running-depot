@@ -71,6 +71,8 @@ purchaseConfirmation.html file. Further details found in Code Description
 section of README</li>
 <li>AddInHousePartController: Add submit form class to allow user 
 to enter minimum and maximum values</li>
+<li>Create method to use EnufPartsValidator 
+in AddProduct Controller</li>
 </ul>
 
 Domain:
@@ -278,7 +280,8 @@ Part.Java (Lines 34-38)</li>
 <li>Display error message for low inventory when adding/updating products lowers the part
 inventory below the minimum</li>
 <ul>
-<li></li>
+<li>Create method to use EnufPartsValidator 
+in AddProduct Controller (Lines 198-209)</li>
 </ul>
 </ul>
 
