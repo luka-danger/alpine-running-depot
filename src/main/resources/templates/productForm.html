@@ -15,12 +15,13 @@
             <!-- Add hidden form field to handle update -->
             <p><input type="hidden" th:field="*{id}"/></p>
 
-            <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+            <p><input type="text" th:field="*{name}" placeholder="Name"/></p>
 
-            <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+            <p><input type="text" th:field="*{price}" placeholder= "Price"/></p>
 
 
-            <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+            <p><input type="text" th:field="*{inv}" placeholder="Inventory" th:value="${product.inv}" /></p>
+
 
             <p>
             <div th:if="${#fields.hasAnyErrors()}">
@@ -31,8 +32,8 @@
         </form>
 
 
-        <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
+        <table>
+            <thead>
             <h2>Available Parts</h2>
             <tr>
                 <th>Name</th>
@@ -46,14 +47,14 @@
                 <td th:text="${tempPart.name}">1</td>
                 <td th:text="${tempPart.price}">1</td>
                 <td th:text="${tempPart.inv}">1</td>
-                <td><a th:href="@{/associatepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Add</a>
+                <td><a th:href="@{/associatepart(partID=${tempPart.id})}">Add</a>
                 </td>
             </tr>
             </form>
         </table>
-            <table class="table table-bordered table-striped">
+            <table>
                 <h2>Associated Parts</h2>
-                <thead class="thead-dark">
+                <thead>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
@@ -66,7 +67,7 @@
                     <td th:text="${tempPart.name}">1</td>
                     <td th:text="${tempPart.price}">1</td>
                     <td th:text="${tempPart.inv}">1</td>
-                    <td><a th:href="@{/removepart(partID=${tempPart.id})}"  class="btn btn-primary btn-sm mb-3">Remove</a>
+                    <td><a th:href="@{/removepart(partID=${tempPart.id})}">Remove</a>
                     </td>
                 </tr>
                 </tbody>

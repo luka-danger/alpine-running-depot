@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.validators.EnufPartsValidator;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.ProductRepository;
@@ -193,4 +194,21 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
+
+    private boolean validateInventory(Product product) {
+        EnufPartsValidator enufPartsValidator = context.getBean(EnufPartsValidator.class);
+        return enufPartsValidator.isValid(product, null);
+    }
+
+    private void updatePartInventory(Product product, Product existingProduct) {
+        PartService partService1 = context.getBean(PartServiceImpl.class);
+        if (product.getInv() - existingProduct.getInv() > 0) {
+            for (Part p : existingProduct.getParts()) {
+                int inv = p.getInv();
+                p.setInv(inv - (product.getInv() - existingProduct.getInv()));
+                partService1.save(p);
+            }
+        }
+    }
+
 }
