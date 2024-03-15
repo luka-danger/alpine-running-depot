@@ -66,9 +66,9 @@
                     </thead>
                     <tbody>
                     <tr th:each="tempPart : ${parts}">
-                        <td th:text="${tempPart.name}">1</td>
+                        <td class="item-name" th:text="${tempPart.name}">1</td>
                         <td th:text="${tempPart.price}">1</td>
-                        <td th:text="${tempPart.inv}">1</td>
+                        <td class="item-inventory" th:text="${tempPart.inv}">1</td>
                         <td th:text="${tempPart.minInventory}">1</td>
                         <td th:text="${tempPart.maxInventory}">1</td>
                         <td>
@@ -112,9 +112,9 @@
                     </thead>
                     <tbody>
                     <tr th:each="tempProduct : ${products}">
-                        <td class="product-name" th:text="${tempProduct.name}">1</td>
+                        <td class="item-name" th:text="${tempProduct.name}">1</td>
                         <td th:text="${tempProduct.price}">1</td>
-                        <td class="product-inventory" th:text="${tempProduct.inv}">1</td>
+                        <td class="item-inventory" th:text="${tempProduct.inv}">1</td>
 
                         <td>
                             <a th:href="@{/BuyProductNow(productID=${tempProduct.id})}">Buy Now</a>
