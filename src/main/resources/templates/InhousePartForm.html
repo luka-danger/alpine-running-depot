@@ -23,18 +23,19 @@
         <p><input type="text" path="inv" th:field="*{inv}" placeholder="Inventory"/></p>
             <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
-            <p><input type="text" th:field="*{minInventory}" placeholder="Min"/></p>
-            <p th:if="${#fields.hasErrors('minInventory')}" th:errors="*{minInventory}">Minimum Inventory Error</p>
+            <form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="post">
+                <!-- For minInventory -->
+                <p><input type="text" th:field="*{minInventory}" placeholder="Min"/></p>
+                <p th:if="${#fields.hasErrors('minInventory')}" th:errors="*{minInventory}">Minimum Inventory Error</p>
 
-            <p><input type="text" th:field="*{maxInventory}" placeholder="Max"/></p>
-            <p th:if="${#fields.hasErrors('maxInventory')}" th:errors="*{maxInventory}">Maximum Inventory Error</p>
+                <!-- For maxInventory -->
+                <p><input type="text" th:field="*{maxInventory}" placeholder="Max"/></p>
+                <p th:if="${#fields.hasErrors('maxInventory')}" th:errors="*{maxInventory}">Maximum Inventory Error</p>
 
-            <!-- <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p> -->
+                <p><input type="submit" value="Submit" /></p>
+            </form>
 
-        <p><input type="submit" value="Submit" /></p>
-        </form>
-        <p><errors path="price" cssClass=""error/><div>
-
+    <div>
         <a class="back-to-main" href="http://localhost:8080/">Back to main inventory</a>
     </div>
 </body>

@@ -69,6 +69,8 @@ Controllers:
 purchased product inventory by 1 and map to the newly created 
 purchaseConfirmation.html file. Further details found in Code Description 
 section of README</li>
+<li>AddInHousePartController: Add submit form class to allow user 
+to enter minimum and maximum values</li>
 </ul>
 
 Domain:
@@ -162,6 +164,7 @@ Lines 19-25</li>
 <li>Changes to InHousePartForm.html:</li>
 <ul>
 <li>Add min and max values for in house part form</li>
+<li>Map Error messages to InHousePartForm</li>
 </ul>
 <li>Changes to OutsourcedPartForm.html:</li>
 <ul>
@@ -244,8 +247,10 @@ on purchaseConfirmation.html (Lines 126 and 128 on
 <li>Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for 
 the inventory so the user can set the maximum and minimum values: </li>
 <ul>
-<li>Changes found at/templates/InHousePartForm 
+<li>HTML Changes found at/templates/InHousePartForm 
 and /templates/OutsourcedPartForm (Lines 26-30)</li>
+<li>Add submit form class to allow user 
+to enter minimum and maximum values (Lines 33-52)</li>
 </ul>
 <li>Rename the file the persistent storage is saved to:</li>
 <ul>
@@ -254,24 +259,24 @@ and /templates/OutsourcedPartForm (Lines 26-30)</li>
 <li>Modify the code to enforce that the inventory is between or at 
 the minimum and maximum value:</li>
 <ul>
-<li>Changes found in /domain/Part (Lines 97-102)</li>
+<li>Changes found in /domain/Part (Lines 97-106)</li>
 </ul>
 </ul>
 
 **(H) Add validation for min / max fields**
 <ul>
 <li>Display error message for low inventory when adding/updating parts if inventory less
-than minimum number of parts</li>
+than minimum number of parts or if the inventory is greater than 
+maximum</li>
 <ul>
-<li></li>
+<li>Add submit form class to allow user 
+to enter minimum and maximum values (Lines 33-52)</li>
+<li>Add Error Message for @Min and @Max annotations in 
+Part.Java (Lines 34-38)</li>
+<li>Map Error messages to InHousePartForm (Lines 26-33)</li>
 </ul>
 <li>Display error message for low inventory when adding/updating products lowers the part
 inventory below the minimum</li>
-<ul>
-<li></li>
-</ul>
-<li>Display error message when adding/updating parts if the inventory is greater than 
-maximum</li>
 <ul>
 <li></li>
 </ul>
