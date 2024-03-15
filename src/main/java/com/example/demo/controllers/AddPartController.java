@@ -25,29 +25,24 @@ public class AddPartController {
     private ApplicationContext context;
 
     @GetMapping("/showPartFormForUpdate")
-    public String showPartFormForUpdate(@RequestParam("partID") int theId,Model theModel){
+    public String showPartFormForUpdate(@RequestParam("partID") int theId, Model theModel){
 
-        PartService repo=context.getBean(PartServiceImpl.class);
-        OutsourcedPartService outsourcedrepo=context.getBean(OutsourcedPartServiceImpl.class);
-        InhousePartService inhouserepo=context.getBean(InhousePartServiceImpl.class);
+        PartService repo = context.getBean(PartServiceImpl.class);
+        OutsourcedPartService outsourcedrepo = context.getBean(OutsourcedPartServiceImpl.class);
+        InhousePartService inhouserepo = context.getBean(InhousePartServiceImpl.class);
 
-        boolean inhouse=true;
-        List<OutsourcedPart> outsourcedParts=outsourcedrepo.findAll();
-        for(OutsourcedPart outsourcedPart:outsourcedParts) {
-            if(outsourcedPart.getId()==theId)inhouse=false;
+        Part tempPart = repo.findById(theId); // Get the part by ID
+
+        if(tempPart instanceof InhousePart) {
+            theModel.addAttribute("inhousepart", (InhousePart) tempPart);
+            return "InhousePartForm";
+        } else if(tempPart instanceof OutsourcedPart) {
+            theModel.addAttribute("outsourcedpart", (OutsourcedPart) tempPart);
+            return "OutsourcedPartForm";
+        } else {
+            // Handle the case when the part type is neither in-house nor outsourced
+            return "error"; // or any appropriate error handling
         }
-        String formtype;
-        if(inhouse){
-            InhousePart inhousePart=inhouserepo.findById(theId);
-            theModel.addAttribute("inhousepart",inhousePart);
-            formtype="InhousePartForm";
-        }
-        else{
-            OutsourcedPart outsourcedPart=outsourcedrepo.findById(theId);
-            theModel.addAttribute("outsourcedpart",outsourcedPart);
-            formtype="OutsourcedPartForm";
-        }
-        return formtype;
     }
 
     @GetMapping("/deletepart")
@@ -64,3 +59,4 @@ public class AddPartController {
     }
 
 }
+

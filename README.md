@@ -262,6 +262,7 @@ to enter minimum and maximum values (Lines 33-52)</li>
 <li>Rename the file the persistent storage is saved to:</li>
 <ul>
 <li>Changes found in resources/application.properties (Line 6)</li>
+<li>Changed H2 Database name to spring-boot-h2-database</li>
 </ul>
 <li>Modify the code to enforce that the inventory is between or at 
 the minimum and maximum value:</li>

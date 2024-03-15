@@ -24,7 +24,7 @@
         </div>
         <div class="bottom"></div>
     </div>
-        <hr>
+    <hr>
     <div id="bg" class="right">
         <div class="header">
             <div>
@@ -72,7 +72,7 @@
                         <td th:text="${tempPart.minInventory}">1</td>
                         <td th:text="${tempPart.maxInventory}">1</td>
                         <td>
-                            <a th:href="@{/showAddPartForm(partID=${tempPart.id})}">Update</a>
+                            <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}">Update</a>
                             <a th:href="@{/deletepart(partID=${tempPart.id})}"
                                onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
                         </td>
