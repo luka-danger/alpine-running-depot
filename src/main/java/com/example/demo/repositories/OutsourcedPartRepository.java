@@ -1,6 +1,6 @@
-package com.example.demo.repositories;
+package alpine.inventory.app.repositories;
 
-import com.example.demo.domain.OutsourcedPart;
+import alpine.inventory.app.domain.OutsourcedPart;
 import org.springframework.data.repository.CrudRepository;
 
 /**

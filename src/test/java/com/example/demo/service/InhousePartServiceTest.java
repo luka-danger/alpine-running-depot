@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package alpine.inventory.app.service;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.repositories.InhousePartRepository;
+import alpine.inventory.app.domain.InhousePart;
+import alpine.inventory.app.repositories.InhousePartRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

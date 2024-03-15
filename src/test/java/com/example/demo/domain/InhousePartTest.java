@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package alpine.inventory.app.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package alpine.inventory.app.domain;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

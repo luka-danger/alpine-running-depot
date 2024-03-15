@@ -1,7 +1,7 @@
-package com.example.demo.domain;
+package alpine.inventory.app.domain;
 
-import com.example.demo.validators.ValidEnufParts;
-import com.example.demo.validators.ValidProductPrice;
+import alpine.inventory.app.validators.ValidEnufParts;
+import alpine.inventory.app.validators.ValidProductPrice;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

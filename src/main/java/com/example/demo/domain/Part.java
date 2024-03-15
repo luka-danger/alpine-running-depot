@@ -1,6 +1,6 @@
-package com.example.demo.domain;
+package alpine.inventory.app.domain;
 
-import com.example.demo.validators.ValidDeletePart;
+import alpine.inventory.app.validators.ValidDeletePart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -20,8 +20,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
-// public class Part implements Serializable {
-public class Part implements Serializable {
+public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;

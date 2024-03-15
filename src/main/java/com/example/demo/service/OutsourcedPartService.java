@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package alpine.inventory.app.service;
 
-import com.example.demo.domain.OutsourcedPart;
+import alpine.inventory.app.domain.OutsourcedPart;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.example.demo.repositories;
+package alpine.inventory.app.repositories;
 
-import com.example.demo.domain.InhousePart;
+import alpine.inventory.app.domain.InhousePart;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

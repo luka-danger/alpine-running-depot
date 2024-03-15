@@ -1,8 +1,7 @@
-package com.example.demo.repositories;
+package alpine.inventory.app.repositories;
 
-import com.example.demo.domain.InhousePart;
+import alpine.inventory.app.domain.InhousePart;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 
 /**
