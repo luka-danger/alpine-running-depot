@@ -277,7 +277,7 @@ than minimum number of parts or if the inventory is greater than
 maximum</li>
 <ul>
 <li>Add submit form class to allow user 
-to enter minimum and maximum values (Lines 33-52)</li>
+to enter minimum and maximum values (AddInHousePartController - Lines 33-52)</li>
 <li>Add Error Message for @Min and @Max annotations in 
 Part.Java (Lines 34-38)</li>
 <li>Map Error messages to InHousePartForm (Lines 26-33)</li>
@@ -292,10 +292,16 @@ in AddProduct Controller (Lines 198-209)</li>
 
 **(I) Add Two Units Tests for Min/Max Fields to the PartTest class in test package**
 <ul>
-<li>Test 1: </li>
+<li>Test 1: Minimum Inventory Unit Test</li>
+<ul>
+<li>Unit testMinInventory() found in PartTest.java (Lines 163 - 169)</li>
+</ul>
 </ul>
 <ul>
-<li>Test 2:</li>
+<li>Test 2: Maximum Inventory Unit Test</li>
+<ul>
+<li>Unit testMaxInventory() found in PartTest.java (Lines 172 - 178)</li>
+</ul>
 </ul>
 
 **(J) Removed class files for unused validators:**
