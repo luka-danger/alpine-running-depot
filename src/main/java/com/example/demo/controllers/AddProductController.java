@@ -68,12 +68,12 @@ public class AddProductController {
                 if(!product2.getParts().contains(p))availParts.add(p);
             }
             theModel.addAttribute("availparts",availParts);
-            theModel.addAttribute("assparts",product2.getParts());
+            theModel.addAttribute("assignparts",product2.getParts());
             return "productForm";
         }
- //       theModel.addAttribute("assparts", assparts);
+ //       theModel.addAttribute("assignparts", assignparts);
  //       this.product=product;
-//        product.getParts().addAll(assparts);
+//        product.getParts().addAll(assignparts);
         else {
             ProductService repo = context.getBean(ProductServiceImpl.class);
             if(product.getId()!=0) {
@@ -88,7 +88,7 @@ public class AddProductController {
                 }
             }
             else{
-                product.setInv(0);
+                product.setInv(product.getInv());
             }
             repo.save(product);
             return "confirmationaddproduct";
