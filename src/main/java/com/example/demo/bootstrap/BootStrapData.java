@@ -47,7 +47,7 @@ public class BootStrapData implements CommandLineRunner {
         // Uncomment the below code to reset sample inventory:
         // partRepository.deleteAll();
 
-        if(partRepository.count() == 0) {
+        if(outsourcedPartRepository.count() == 0) {
             outsourcedPartRepository.save(shoelace);
             outsourcedPartRepository.save(vestStrap);
             outsourcedPartRepository.save(headBand);
