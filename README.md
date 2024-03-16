@@ -45,17 +45,21 @@ Templates:
 </ul>
 
 # Code Changes:
+Spring Boot Application: 
+<ul>
+<li>Rename application to AlpineRunningDepot</li>
+</ul>
+
 Bootstrap:
 <ul>
-<li>Comment out Outsourced Part Domain and Repository</li>
-<li>Add Parts Domain and Parts Repository</li>
-<li>Create new Parts Objects</li>
-<li>Write an if statement that adds the new Parts objects to the Parts 
-repository if the Parts repository is empty</li>
-<li>Create new Products Objects</li>
+<li>Create new Outsource Parts Objects (Lines 44-48)</li>
+<li>Line 51 (commented out) allows the user to reset the sample inventory</li>
+<li>Write an if statement that adds the new Parts objects to the OutsourcedParts 
+repository if the Parts repository is empty (Lines 53-59)</li>
+<li>Create new Products Objects (Lines 63-67)</li>
+<li>Line 70 (commented out) allows the user to reset the sample inventory</li>
 <li>Write an if statement that adds the new Products objects to the Parts 
-repository if the Products repository is empty</li>
-<li>Line 66 (commented out) allows the user to reset the sample inventory</li>
+repository if the Products repository is empty (Lines 72-77)</li>
 </ul>
 
 Added Controllers:
@@ -70,27 +74,42 @@ provide active links to the html pages: about.html, contact.html, guestAbout.htm
 
 Controllers:
 <ul>
-<li>AddProductController: Added BuyProductNow Controller to decrement 
+<li>AddProductController:</li>
+<ul>
+<li>Added BuyProductNow Controller to decrement 
 purchased product inventory by 1 and map to the newly created 
-purchaseConfirmation.html file. Further details found in Code Description 
-section of README</li>
+purchaseConfirmation.html file. (Lines 118 - 133)</li>
+<li>Create validateInventory() method to use EnufPartsValidator 
+in AddProduct Controller (Lines 198 - 200)</li>
+<li>Create updatePartInventory() method to use display warning 
+if entered product inventory exceeds max value (Lines 203 - 209)</li>
+</ul>
 <li>AddInHousePartController: Add submit form class to allow user 
-to enter minimum and maximum values</li>
-<li>Create method to use EnufPartsValidator 
-in AddProduct Controller</li>
+to enter minimum and maximum values and verify that it 
+is within the min / max parameters(Lines 33 - 52) </li>
+<li>AddOutsourcePartController: Add submit form class to allow user 
+to enter minimum and maximum values and verify that it 
+is within the min / max parameters(Lines 36 - 51) </li>
 </ul>
 
 Domain:
 <ul>
-<li>Comment out abstract class in Part Object Constructor</li>
-<li>Make Part Object Constructor a public class that can be instantiated</li>
-<li>Add minInventory Variable</li>
-<li>Add maxInventory Variable</li>
-<li>Add min/max variables to overloaded Constructor</li>
-<li>Create minInventory getter</li>
-<li>Write code to enforce minimum value</li>
-<li>Create maxInventory getter</li>
-<li>Write code to enforce maximum value</li>
+<li>Add overloaded OutsourcePart.java Constructor (Lines 20-22)</li>
+<li>Add overloaded InHousePart.java Constructor (Lines 20-22)</li>
+</ul>
+<ul>
+<li>Part.java:</li>
+<ul>
+<li>Add minInventory Variable (Lines 33-34)</li>
+<li>Add maxInventory Variable (Lines 36-37)</li>
+<li>Add min/max variables to overloaded Part
+Constructors (Lines 51, 52, 60, 61)</li>
+<li>Create minInventory setter (Lines 96, 97)</li>
+<li>Create minInventory getter (Lines 108, 109)</li>
+<li>Create maxInventory setter (Lines 100, 101)</li>
+<li>Create maxInventory getter (Lines 112, 113)</li>
+<li>Write code to enforce min and maximum value (Lines 104, 105)</li>
+</ul>
 </ul>
 
 Static/CSS:
@@ -105,6 +124,7 @@ Static/Images:
 <li>Added images directory</li>
 <li>Added images to Main Screen (Inventory), About Pages, Contact Page, 
 and Login Page</li>
+<li>Add screenshots to demo app</li>
 </ul>
 
 Static/Script:
@@ -116,26 +136,30 @@ Static/Script:
 out of the designated container (div) by adding a table overflow: scroll property to both
 the product and the parts inventory tables on the main screen when the tables have a height 
 greater than 176px (roughly 7 rows + a table head). These changes affect the mainscreen.html 
-file and affect the tables on lines 59-80 and lines 99-125. </li>
+file and affect the tables on lines 56-81 and lines 104-128. This function can be found on
+Lines 4-11 and is called on Line 34 of script.js</li>
 <li>displayAlert(): This function displays an alert when the two dummy links "Forgot Password" 
 and "Sign Up" are clicked on the login page. This alert informs the user that the links do not 
 work, as this is not a real website. These changes affect the login.html file and affect the 
-"Forgot Password" link on Line 37 and the "Sign Up" link on Line 44.</li>
-</ul>
+"Forgot Password" link on Line 37 and the "Sign Up" link on Line 44. This function can be found on
+Lines 14-16 on script.js</li>
 <li>noInventory(): This function changes the font color of the name and inventory number
-of any item on the product table where the inventory number is equal to zero. The font color
+of any item on the parts or product table where the inventory number is equal to zero. The font color
 is changed to red to indicate that the item is out of stock. This function can be found on
-Lines 14 - 24.</li>
+Lines 19-29 and is called on Line 34 of script.js</li>
+</ul>
 </ul>
 
 H2 Database:
 <ul>
+<li>Rename Database File: spring-boot-h2-database</li>
 <li>Use ALTER TABLE Command to add Min_Inventory and Max_Inventory to parts database schema</li>
 </ul>
 
 Resources/application.properties: 
 <ul>
-<li>Renamed the database file: jdbc:h2:file:~/renamedH2Db/li>
+<li>Renamed the database file: jdbc:h2:file:~/spring-boot-h2-database (Line 6)</li>
+<li>Add spring.jpa.hibernate.dialect=org.hibernate.dialect.H2Dialect (Line 14)</li>
 </ul>
 
 Resources/Templates: 
@@ -147,39 +171,43 @@ the Spring Boot Application. It can also be reached by clicking the Test Drive b
 Line 50 of login.html</strong></li>
 <li>Link Stylesheet (style.css) on Line 11</li>
 <li>Link JavaScript File (script.js) on Line 12</li>
-<li>Change title to Alpine Running on Line 13</li>
-<li>Wrap body in container div on Line 17</li>
-<li>Separate into left and right containers on Lines 18 and 28</li>
-<li>Add a top and bottom container to left container for h1 and sub-header on 
-Lines 19-25</li>
-<li>Add header with href links to About, Contact Us, and Login pages on Lines 29 - 39</li>
-<li>Add Min and Max to Parts Table Head</li>
-<li>Add Min and Max Values to Parts Table</li>
-<li>Wrap Replacement Parts section in a div called parts on Line 40</li>
-<li>Wrap Add Item Links in a div Line 51 </li>
-<li>Change "Add In-House Item" to "Add Replacement Item" on Line 52</li>
-<li>Comment out the outsourced item link on Line 53</li>
-<li>Wrap Replacement Item Inventory Table in a div called inventory-table on Line 55</li>
-<li>This tables uses the custom JavaScript function updateTableOverflow()</li>
-<li>Wrap Products section in a div called products on Line 80</li>
-<li>Wrap Add Product in a div Line 96</li>
-<li>Wrap Product Inventory Table in a div called inventory-table on Line 99</li>
-<li>This tables uses the custom JavaScript function updateTableOverflow()</li>
-<li>This table uses the custom JavaScript function noInventory()</li>
-<li>Create "Buy Now" button on Line 116</li>
+<li>Change title to Alpine Running (Line 13)</li>
+<li>Wrap body in container div (Line 17)</li>
+<li>Separate into left and right containers (Lines 18, 28)</li>
+<li>Add a top and bottom container to left container for h1 and 
+sub-header (Lines 19-25)</li>
+<li>Add header with href links to About, Contact Us, and Login pages (Lines 29 - 39)</li>
+<li>Wrap Replacement Parts section in a div called parts (Line 40)</li>
+<li>Wrap Add Item Links in a div (Line 51) </li>
+<li>Change "Add In-House Item" to "Add Replacement Item" (Line 52)</li>
+<li>Comment out the outsourced item link on Line 53 (Line 53) </li>
+<li>Wrap Replacement Item Inventory Table in a div called inventory-table (Line 55)</li>
+<li>This table uses the custom JavaScript functions updateTableOverflow()
+and noInventory(). They can be found in static/script.js</li>
+<li>Add Min and Max to Parts Table Head (Lines 63, 64)</li>
+<li>Add Min and Max Values to Parts Table (Lines 72, 73)</li>
+<li>Wrap Products section in a div called products (Line 84)</li>
+<li>Wrap Add Product in a div called add item (Line 100)</li>
+<li>Wrap Product Inventory Table in a div called inventory-table (Line 103)</li>
+<li>This table uses the custom JavaScript functions updateTableOverflow()
+and noInventory(). They can be found in static/script.js</li>
+<li>Create "Buy Now" button (Line 120)</li>
 </ul>
 <li>Changes to InHousePartForm.html:</li>
 <ul>
-<li>Add min and max values for in house part form</li>
-<li>Map Error messages to InHousePartForm</li>
+<li>Link stylesheet (Line 7)</li>
+<li>Wrap form in a div called parts form (Line 11)</li>
+<li>Add min and max values for in house part form (Lines 26-31)</li>
+<li>Map Display Error messages to InHousePartForm (Line 27, 31)</li>
 </ul>
 <li>Changes to OutsourcedPartForm.html:</li>
 <ul>
-<li>Add min and max values for outsourced part form</li>
+<li>Link stylesheet (Line 7)</li>
+<li>Wrap form in a div called parts form (Line 11)</li>
+<li>Add min and max values for outsourced part form (Lines 26-31)</li>
+<li>Map Display Error messages to InHousePartForm (Line 27, 31)</li>
 </ul>
 </ul>
-
-
 
 Added Templates:
 All added templates can be accessed by use of the following created controllers: AboutController, 
@@ -225,39 +253,39 @@ The About page can also be accessed [here](http://localhost:8080/guestAbout). Co
 can be accessed [here](src/main/resources/templates/guestAbout.html).
 
 **(E) Add A Sample Parts and Products Inventory:** This section can be found in the BootStrapData.java 
-file on Lines 43-71. An if statement is used to display the sample inventories when the parts and products
-lists are empty.
+file (Lines 41-75). An if statement is used to display the sample inventories when the parts and products
+lists are empty. A commented out reset can be used to reset both part and product repositories (Lines 48, 67)
 
 **(F) Add A Buy Now Button To Product List:**
 <ul>
 <li>The Buy Now Button can be found on mainscreen.html on Line 116</li>
 <li>The buy now button maps to purchaseConfirmation.html</li>
 <li>The Buy Now button uses the BuyProductNow Controller to decrement 
-items by 1 each time they are purchased. (Lines 117 - 132 on 
-/controllers/AddProductController.java)</li>
+items by 1 each time they are purchased. This can be found on controllers/AddProductController.java 
+(Lines 117 - 132)</li>
 <li>A purchase successful or purchase failed message is displayed 
-on purchaseConfirmation.html (Lines 126 and 128 on 
-/controllers/AddProductController.java)</li>
+on purchaseConfirmation.html This can be found on controllers/AddProductController.java
+(Lines 126, 128)</li>
 </ul>
 
 **(G) Modify Parts to track max and min inventory**
 <ul>
 <li>Add additional fields to the part entity for maximum and minimum inventory:</li>
 <ul>
-<li>Add max and min inventory fields to Parts (/domain/Part Lines 34-38)</li>
-<li>Add fields to overloaded Parts Constructor (/domain/Part Lines 48-60) </li>
+<li>Add max and min inventory fields to domain/Part.java
+(Lines 33-38)</li>
+<li>Add fields to overloaded Parts Constructor in domain/Part.java (Lines 47-62) </li>
 </ul>
 <li>Modify the sample inventory to include the maximum and minimum fields:</li>
 <ul>
-<li>Changes found at /bootstrap/BootStrapData.java Lines: 43-47</li>
+<li>Changes found in bootstrap/BootStrapData.java (Lines 41-45)</li>
+<li>Changes found in template/mainscreen.html (Lines 72, 73)</li>
 </ul>
 <li>Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for 
 the inventory so the user can set the maximum and minimum values: </li>
 <ul>
-<li>HTML Changes found at/templates/InHousePartForm 
-and /templates/OutsourcedPartForm (Lines 26-30)</li>
-<li>Add submit form class to allow user 
-to enter minimum and maximum values (Lines 33-52)</li>
+<li>Changes found in templates/InHousePartForm 
+and templates/OutsourcedPartForm (Lines 26-30)</li>
 </ul>
 <li>Rename the file the persistent storage is saved to:</li>
 <ul>
@@ -267,41 +295,68 @@ to enter minimum and maximum values (Lines 33-52)</li>
 <li>Modify the code to enforce that the inventory is between or at 
 the minimum and maximum value:</li>
 <ul>
-<li>Changes found in /domain/Part (Lines 97-106)</li>
+<li>Create isInventoryValid() method to ensure inventory is between 
+minimum and maximum value range. Code found in domain/Part.java (Lines 104-106)</li>
+<li>Add ternary operator to minInventory getter to enforce 
+minimum inventory value. Code found in domain/Part.java (Line 109)</li>
+<li>Add ternary operator to maxInventory getter to enforce 
+maximum inventory value. Code found in domain/Part.java (Line 113)</li>
+<li>Add submit form class to allow to enforce minimum and maximum values. 
+Code found in AddInhousePartController (Lines 33-52)</li>
+<li>Add submit form class to allow to enforce minimum and maximum values.
+Code found in AddOutsourcedPartController (Lines 36-52)</li>
 </ul>
 </ul>
 
 **(H) Add validation for min / max fields**
 <ul>
 <li>Display error message for low inventory when adding/updating parts if inventory less
-than minimum number of parts or if the inventory is greater than 
-maximum</li>
+than minimum number of parts</li>
 <ul>
-<li>Add submit form class to allow user 
-to enter minimum and maximum values (AddInHousePartController - Lines 33-52)</li>
+<li>Use isInventoryValid to enforce min range and display error message. Code found in 
+AddInHousePartController (Lines 40-43)</li>
+<li>Use isInventoryValid to enforce min range and display error message. Code found in 
+AddOutsourcedPartController (Lines 43-46)</li>
 <li>Add Error Message for @Min and @Max annotations in 
-Part.Java (Lines 34-38)</li>
-<li>Map Error messages to InHousePartForm (Lines 26-33)</li>
+Part.Java (Lines 33)</li>
+<li>Map Error messages to templates/InHousePartForm (Lines 27)</li>
+<li>Map Error messages to templates/OutsourcedPartForm (Lines 27)</li>
 </ul>
 <li>Display error message for low inventory when adding/updating products lowers the part
 inventory below the minimum</li>
 <ul>
-<li>Create method to use EnufPartsValidator 
-in AddProduct Controller (Lines 198-209)</li>
+<li>Create validateInventory() method to use EnufPartsValidator 
+in AddProductController (Lines 197-200)</li>
+<li>Create updatePartInventory() method to update part inventory
+when a part is attached to a product and the product inventory
+is increased (Lines 202 -211)</li>
+</ul>
+<li>Display error message for low inventory when adding/updating parts if inventory 
+greater than maximum number of parts</li>
+<ul>
+<li>Use isInventoryValid to enforce max range and display error message. Code found in 
+AddInHousePartController (Lines 40-43)</li>
+<li>Use isInventoryValid to enforce max range and display error message. Code found in 
+AddOutsourcedPartController (Lines 43-46)</li>
+<li>Add Error Message for @Min and @Max annotations in 
+Part.Java (Lines 36)</li>
+<li>Map Error messages to templates/InHousePartForm (Lines 31)</li>
+<li>Map Error messages to templates/OutsourcedPartForm (Lines 31)</li>
 </ul>
 </ul>
+
 
 **(I) Add Two Units Tests for Min/Max Fields to the PartTest class in test package**
 <ul>
 <li>Test 1: Minimum Inventory Unit Test</li>
 <ul>
-<li>Unit testMinInventory() found in PartTest.java (Lines 163 - 169)</li>
+<li>Unit testMinInventory() found in PartTest.java (Lines 161 - 168)</li>
 </ul>
 </ul>
 <ul>
 <li>Test 2: Maximum Inventory Unit Test</li>
 <ul>
-<li>Unit testMaxInventory() found in PartTest.java (Lines 172 - 178)</li>
+<li>Unit testMaxInventory() found in PartTest.java (Lines 170 - 177)</li>
 </ul>
 </ul>
 
@@ -316,3 +371,24 @@ The image used in contact.html on Line 45 is my own.
 All other images are free, stock photos downloaded from Unsplash.com
 
 # Screenshots
+![Main Screen]()
+
+![About Page]()
+
+![Contact Us]()
+
+![Login Page]()
+
+![Custom JS Function]()
+
+![Add Part]()
+
+![Max Inventory Enforced]()
+
+![Add Part to Product]()
+
+![Add Part to Product, No Inventory]()
+
+![Buy Now]()
+
+![Out of Stock]()
