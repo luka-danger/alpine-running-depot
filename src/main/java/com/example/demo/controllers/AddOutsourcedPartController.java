@@ -40,6 +40,10 @@ public class AddOutsourcedPartController {
             return "OutsourcedPartForm";
         }
         else{
+            if (!part.isInventoryValid()) {
+                bindingResult.rejectValue("inv", "invalid.inventory", "Inventory cannot exceed max inventory value");
+                return "OutsourcedPartForm";
+            }
             OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
             OutsourcedPart op=repo.findById((int)part.getId());
             if(op!=null)part.setProducts(op.getProducts());
