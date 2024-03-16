@@ -36,7 +36,7 @@ public class AddInhousePartController {
         if (theBindingResult.hasErrors()) {
             return "InhousePartForm";
         } else {
-            // Check inventory validity
+            // Display Error Message if Invalid
             if (!part.isInventoryValid()) {
                 theBindingResult.rejectValue("inv", "invalid.inventory", "Inventory cannot exceed max inventory value");
                 return "InhousePartForm";

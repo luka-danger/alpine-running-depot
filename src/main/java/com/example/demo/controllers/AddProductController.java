@@ -101,7 +101,7 @@ public class AddProductController {
         Product theProduct = repo.findById(theId);
         product1=theProduct;
         //    this.product=product;
-        //set the employ as a model attibute to prepopulate the form
+        //set the employ as a model attribute to prepopulate the form
         theModel.addAttribute("product", theProduct);
         theModel.addAttribute("assparts",theProduct.getParts());
         List<Part>availParts=new ArrayList<>();

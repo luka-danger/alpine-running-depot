@@ -31,7 +31,7 @@ public class AddPartController {
         OutsourcedPartService outsourcedrepo = context.getBean(OutsourcedPartServiceImpl.class);
         InhousePartService inhouserepo = context.getBean(InhousePartServiceImpl.class);
 
-        Part tempPart = repo.findById(theId); // Get the part by ID
+        Part tempPart = repo.findById(theId);
 
         if(tempPart instanceof InhousePart) {
             theModel.addAttribute("inhousepart", (InhousePart) tempPart);
@@ -40,8 +40,8 @@ public class AddPartController {
             theModel.addAttribute("outsourcedpart", (OutsourcedPart) tempPart);
             return "OutsourcedPartForm";
         } else {
-            // Handle the case when the part type is neither in-house nor outsourced
-            return "error"; // or any appropriate error handling
+            // Return error if part is neither outsourced nor inhouse
+            return "error";
         }
     }
 
