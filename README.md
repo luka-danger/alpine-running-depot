@@ -371,24 +371,24 @@ The image used in contact.html on Line 45 is my own.
 All other images are free, stock photos downloaded from Unsplash.com
 
 # Screenshots
-![Main Screen]()
+![Main Screen](src/main/resources/static/images/screenshots/main-screenshot.png)
 
-![About Page]()
+![About Page](src/main/resources/static/images/screenshots/about-screenshot.png)
 
-![Contact Us]()
+![Contact Us](src/main/resources/static/images/screenshots/contact-screenshot.png)
 
-![Login Page]()
+![Login Page](src/main/resources/static/images/screenshots/login-screenshot.png)
 
-![Custom JS Function]()
+![Custom JS Function](src/main/resources/static/images/screenshots/function-screenshot.png)
 
-![Add Part]()
+![Add Part](src/main/resources/static/images/screenshots/add-part-screenshot.png)
 
-![Max Inventory Enforced]()
+![Max Inventory Enforced](src/main/resources/static/images/screenshots/enforce-screenshot.png)
 
-![Add Part to Product]()
+![Add Part to Product](src/main/resources/static/images/screenshots/associated-part-screenshot.png)
 
-![Add Part to Product, No Inventory]()
+![Add Part to Product, No Inventory](src/main/resources/static/images/screenshots/no-part-inventory-screenshot.png)
 
-![Buy Now]()
+![Buy Now](src/main/resources/static/images/screenshots/buy-now-screenshot.png)
 
-![Out of Stock]()
+![Out of Stock](src/main/resources/static/images/screenshots/out-of-stock-screenshot.png)
