@@ -1,9 +1,9 @@
-package alpine.inventory.app.controllers;
+package com.example.demo.controllers;
 
-import alpine.inventory.app.domain.OutsourcedPart;
-import alpine.inventory.app.domain.Part;
-import alpine.inventory.app.service.OutsourcedPartService;
-import alpine.inventory.app.service.OutsourcedPartServiceImpl;
+import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.domain.Part;
+import com.example.demo.service.OutsourcedPartService;
+import com.example.demo.service.OutsourcedPartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;

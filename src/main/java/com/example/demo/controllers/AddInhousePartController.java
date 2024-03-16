@@ -1,8 +1,8 @@
-package alpine.inventory.app.controllers;
+package com.example.demo.controllers;
 
-import alpine.inventory.app.domain.InhousePart;
-import alpine.inventory.app.service.InhousePartService;
-import alpine.inventory.app.service.InhousePartServiceImpl;
+import com.example.demo.domain.InhousePart;
+import com.example.demo.service.InhousePartService;
+import com.example.demo.service.InhousePartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;

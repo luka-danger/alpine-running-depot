@@ -1,4 +1,4 @@
-package alpine.inventory.app.validators;
+package com.example.demo.validators;
 
 import javax.validation.Payload;
 

@@ -1,9 +1,9 @@
-package alpine.inventory.app.controllers;
+package com.example.demo.controllers;
 
-import alpine.inventory.app.domain.Part;
-import alpine.inventory.app.domain.Product;
-import alpine.inventory.app.service.PartService;
-import alpine.inventory.app.service.ProductService;
+import com.example.demo.domain.Part;
+import com.example.demo.domain.Product;
+import com.example.demo.service.PartService;
+import com.example.demo.service.ProductService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

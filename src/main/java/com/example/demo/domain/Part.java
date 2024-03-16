@@ -1,6 +1,6 @@
-package alpine.inventory.app.domain;
+package com.example.demo.domain;
 
-import alpine.inventory.app.validators.ValidDeletePart;
+import com.example.demo.validators.ValidDeletePart;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

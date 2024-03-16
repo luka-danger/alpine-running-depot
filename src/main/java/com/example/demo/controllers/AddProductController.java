@@ -1,12 +1,12 @@
-package alpine.inventory.app.controllers;
+package com.example.demo.controllers;
 
-import alpine.inventory.app.validators.EnufPartsValidator;
-import alpine.inventory.app.domain.Part;
-import alpine.inventory.app.domain.Product;
-import alpine.inventory.app.service.PartService;
-import alpine.inventory.app.service.PartServiceImpl;
-import alpine.inventory.app.service.ProductService;
-import alpine.inventory.app.service.ProductServiceImpl;
+import com.example.demo.validators.EnufPartsValidator;
+import com.example.demo.domain.Part;
+import com.example.demo.domain.Product;
+import com.example.demo.service.PartService;
+import com.example.demo.service.PartServiceImpl;
+import com.example.demo.service.ProductService;
+import com.example.demo.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;

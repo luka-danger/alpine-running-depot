@@ -1,10 +1,10 @@
-package alpine.inventory.app.bootstrap;
+package com.example.demo.bootstrap;
 
-import alpine.inventory.app.repositories.OutsourcedPartRepository;
-import alpine.inventory.app.repositories.PartRepository;
-import alpine.inventory.app.repositories.ProductRepository;
-import alpine.inventory.app.domain.OutsourcedPart;
-import alpine.inventory.app.domain.Product;
+import com.example.demo.repositories.OutsourcedPartRepository;
+import com.example.demo.repositories.PartRepository;
+import com.example.demo.repositories.ProductRepository;
+import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.domain.Product;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package alpine.inventory.app.service;
+package com.example.demo.service;
 
-import alpine.inventory.app.repositories.InhousePartRepository;
-import alpine.inventory.app.domain.InhousePart;
+import com.example.demo.repositories.InhousePartRepository;
+import com.example.demo.domain.InhousePart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
