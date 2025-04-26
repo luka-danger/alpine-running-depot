@@ -17,6 +17,29 @@ delete, and update replacement parts and product inventory. It also includes an 
 with a link to a sign up page, an about page for users that already have an account, a login 
 page, and a Contact Us page. 
 
+# Screenshots
+![Main Screen](src/main/resources/static/images/screenshots/main-screenshot.png)
+
+![About Page](src/main/resources/static/images/screenshots/about-screenshot.png)
+
+![Contact Us](src/main/resources/static/images/screenshots/contact-screenshot.png)
+
+![Login Page](src/main/resources/static/images/screenshots/login-screenshot.png)
+
+![Custom JS Function](src/main/resources/static/images/screenshots/function-screenshot.png)
+
+![Add Part](src/main/resources/static/images/screenshots/add-part-screenshot.png)
+
+![Max Inventory Enforced](src/main/resources/static/images/screenshots/enforce-screenshot.png)
+
+![Add Part to Product](src/main/resources/static/images/screenshots/associated-part-screenshot.png)
+
+![Add Part to Product, No Inventory](src/main/resources/static/images/screenshots/no-part-inventory-screenshot.png)
+
+![Buy Now](src/main/resources/static/images/screenshots/buy-now-screenshot.png)
+
+![Out of Stock](src/main/resources/static/images/screenshots/out-of-stock-screenshot.png)
+
 # Added Files:
 Controllers:
 <ul>
@@ -369,26 +392,3 @@ Part.Java (Lines 36)</li>
 The image used in contact.html on Line 45 is my own.
 <br>
 All other images are free, stock photos downloaded from Unsplash.com
-
-# Screenshots
-![Main Screen](src/main/resources/static/images/screenshots/main-screenshot.png)
-
-![About Page](src/main/resources/static/images/screenshots/about-screenshot.png)
-
-![Contact Us](src/main/resources/static/images/screenshots/contact-screenshot.png)
-
-![Login Page](src/main/resources/static/images/screenshots/login-screenshot.png)
-
-![Custom JS Function](src/main/resources/static/images/screenshots/function-screenshot.png)
-
-![Add Part](src/main/resources/static/images/screenshots/add-part-screenshot.png)
-
-![Max Inventory Enforced](src/main/resources/static/images/screenshots/enforce-screenshot.png)
-
-![Add Part to Product](src/main/resources/static/images/screenshots/associated-part-screenshot.png)
-
-![Add Part to Product, No Inventory](src/main/resources/static/images/screenshots/no-part-inventory-screenshot.png)
-
-![Buy Now](src/main/resources/static/images/screenshots/buy-now-screenshot.png)
-
-![Out of Stock](src/main/resources/static/images/screenshots/out-of-stock-screenshot.png)
